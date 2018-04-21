@@ -1,0 +1,2 @@
+rootProject.name = 'invest-tools'
+include 'backend'
