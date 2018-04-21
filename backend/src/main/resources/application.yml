@@ -1,0 +1,27 @@
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+      write_dates_as_timestamps: true
+  datasource:
+    url: jdbc:h2:file:./test
+    username: developer
+    password: developer
+    driverClassName: org.h2.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      org.hibernate.envers.do_not_audit_optimistic_locking_field: false
+  data:
+    rest:
+      base-path: /api
+
+server:
+  address: localhost
+  port: 8090
+
+liquibase:
+  change-log: classpath:/db/default/scripts.xml
