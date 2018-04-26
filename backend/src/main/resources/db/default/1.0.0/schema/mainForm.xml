@@ -4,17 +4,17 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog ../../dbchangelog-3.5.xsd">
 
     <changeSet id="Create main form table" author="Anton">
-        <createTable tableName="mainForm">
+        <createTable tableName="MAIN_FORM">
             <column name="id" type="BIGSERIAL" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="TEXT"/>
-            <column name="margin" type="TEXT"/>
-            <column name="capitalization" type="TEXT"/>
-            <column name="year" type="TEXT"/>
-            <column name="quarter" type="TEXT"/>
-            <column name="info" type="TEXT"/>
-            <column name="standard" type="TEXT"/>
+            <!--<column name="margin" type="TEXT"/>-->
+            <!--<column name="capitalization" type="TEXT"/>-->
+            <!--<column name="year" type="TEXT"/>-->
+            <!--<column name="quarter" type="TEXT"/>-->
+            <!--<column name="info" type="TEXT"/>-->
+            <!--<column name="standard" type="TEXT"/>-->
         </createTable>
     </changeSet>
 

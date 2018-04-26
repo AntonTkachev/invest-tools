@@ -5,6 +5,7 @@ import TestElements from './defaultFields/CreateNewElement';
 import styles from './styles.css'
 import SettingsForStandards from "./SettingsForStandards";
 import {standards} from './defaultFields/Const'
+import PostForm from "./PostForm";
 
 class App extends Component {
     constructor(props) {
@@ -43,8 +44,10 @@ class App extends Component {
         else pane = (
             <SplitPane split="horizontal" minSize={40}>
                 <div className="text">INVEST-TOOLS
+                    <button onClick={new PostForm().post}>SLAVA UK</button>
                     <button className="btn_settingStandards"
-                            onClick={this.getTrue.bind(this)}>Settings for standards</button>
+                            onClick={this.getTrue.bind(this)}>Settings for standards
+                    </button>
                 </div>
                 <SplitPane split="vertical" minSize={250}>
                     <div><AddNewElement

@@ -6,13 +6,23 @@ import javax.persistence.Id;
 
 @Entity
 public class MainForm {
+    public MainForm() {
+    }
+
     @Id
     Long id;
 
     @Column(length = 300)
     String name;
 
-    @Column(length = 300)
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+/*    @Column(length = 300)
     String margin;
 
     @Column(length = 300)
@@ -28,5 +38,5 @@ public class MainForm {
     String info;
 
     @Column(length = 300)
-    String standard;
+    String standard;*/
 }
