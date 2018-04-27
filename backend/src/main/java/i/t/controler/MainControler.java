@@ -7,15 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@CrossOrigin("http://localhost:8090/")
 public class MainControler {
     @Autowired
     private MainFormRepository mainFormRepository;
 
-    @RequestMapping(value = "/mainForm/{name}", method = RequestMethod.POST)
-    public void save(@PathVariable(name = "name") String name) {
-        MainForm mainForm = new MainForm();
-        mainForm.setName(name);
-        mainFormRepository.save(mainForm);
+    @RequestMapping(value = "api/mainForms/{id}", method = RequestMethod.GET)
+    public MainForm get(@PathVariable("id") Long id) {
+        MainForm findMainForm = mainFormRepository.findOne(id);
+        return findMainForm;
     }
 }

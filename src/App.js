@@ -18,6 +18,7 @@ class App extends Component {
             settingsForStandards: false,
             standards: standards,
         };
+        this.postForm = new PostForm()
     }
 
     setFromDataOfEvent(event, id) {
@@ -44,7 +45,8 @@ class App extends Component {
         else pane = (
             <SplitPane split="horizontal" minSize={40}>
                 <div className="text">INVEST-TOOLS
-                    <button onClick={new PostForm().post}>SLAVA UK</button>
+                    <button onClick={this.postForm.post}>Post</button>
+                    <button onClick={this.postForm.get}>Get</button>
                     <button className="btn_settingStandards"
                             onClick={this.getTrue.bind(this)}>Settings for standards
                     </button>

@@ -1,8 +1,6 @@
 package i.t.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class MainForm {
@@ -10,18 +8,16 @@ public class MainForm {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(length = 300)
     String name;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
+
 /*    @Column(length = 300)
     String margin;
 
