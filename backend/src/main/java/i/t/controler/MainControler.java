@@ -4,7 +4,10 @@ import i.t.entity.MainForm;
 import i.t.repository.MainFormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 //TODO @RepositoryrestController
 //TODO @RequestMapping
@@ -15,7 +18,7 @@ public class MainControler {
 
     @RequestMapping(value = "api/mainForms/{id}", method = RequestMethod.GET)
     //TODO @ResponceBody
-    public MainForm get(@PathVariable("id") Long id) {
+    public @ResponseBody MainForm get(@PathVariable("id") Long id) {
         MainForm findMainForm = mainFormRepository.findOne(id);
         return findMainForm;
     }

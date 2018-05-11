@@ -1,6 +1,7 @@
 package i.t.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class MainForm {
@@ -12,27 +13,84 @@ public class MainForm {
     Long id;
 
     @Column(length = 300)
-    String name;
+    @NotNull
+    String companyName;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @NotNull
+    Long capitalization;
 
-/*    @Column(length = 300)
-    String margin;
+    @NotNull
+    Long margin;
 
-    @Column(length = 300)
-    String capitalization;
-
-    @Column(length = 300)
-    String year;
-
-    @Column(length = 300)
-    String quarter;
-
-    @Column(length = 300)
     String info;
 
-    @Column(length = 300)
-    String standard;*/
+    Integer quarter;
+
+    String standard;
+
+    Long year;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setCapitalization(Long capitalization) {
+        this.capitalization = capitalization;
+    }
+
+    public void setMargin(Long margin) {
+        this.margin = margin;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void setQuarter(Integer quarter) {
+        this.quarter = quarter;
+    }
+
+    public void setStandard(String standard) {
+        this.standard = standard;
+    }
+
+    public void setYear(Long year) {
+        this.year = year;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public Long getCapitalization() {
+        return capitalization;
+    }
+
+    public Long getMargin() {
+        return margin;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public Integer getQuarter() {
+        return quarter;
+    }
+
+    public String getStandard() {
+        return standard;
+    }
+
+    public Long getYear() {
+        return year;
+    }
 }

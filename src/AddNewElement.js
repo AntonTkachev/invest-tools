@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import styles from './styles.css'
 import {_isEmpty} from "./defaultFields/Const";
+import PostForm from "./PostForm";
 
 class AddNewElement extends Component {
     constructor(props) {
         super(props);
         this.state = {
             formData: [],
-        }
+        };
+        this.postForm = new PostForm()
     }
 
     showValues = (e) => {
         const selectBox = e.target;
-        let elem = this.state.formData[selectBox.selectedIndex];
+        let selectedIndex = selectBox.selectedIndex;
+        let data = this.postForm.get(selectedIndex);
+        console.log(data);
+        let elem = this.state.formData[selectedIndex];
         this.props.setFromData(elem, selectBox.selectedIndex)
     };
 

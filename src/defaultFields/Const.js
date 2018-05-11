@@ -4,20 +4,20 @@ export let jsonSchema = {
     "title": "A registration form",
     "type": "object",
     "required": [
-        "CompanyName",
-        "Margin",
-        "Capitalization"
+        "companyName",
+        "margin",
+        "capitalization"
     ],
     "properties": {
-        "CompanyName": {
+        "companyName": {
             "type": "string",
             "title": "Company Name"
         },
-        "Margin": {
+        "margin": {
             "type": "integer",
             "title": "Margin"
         },
-        "Capitalization": {
+        "capitalization": {
             "type": "integer",
             "title": "Capitalization"
         },

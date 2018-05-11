@@ -40,6 +40,6 @@ dependencies {
     compile 'org.postgresql:postgresql:42.0.0'
     compile 'com.h2database:h2:1.4.196'
 //    compile 'org.springframework.boot.autoconfigure.liquibase'
-
+    compile 'org.projectlombok:lombok:1.16.20'
     testCompile("junit:junit")
 }

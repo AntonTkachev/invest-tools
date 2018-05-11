@@ -8,13 +8,13 @@
             <column name="id" type="BIGSERIAL" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="TEXT"/>
-            <!--<column name="margin" type="TEXT"/>-->
-            <!--<column name="capitalization" type="TEXT"/>-->
-            <!--<column name="year" type="TEXT"/>-->
-            <!--<column name="quarter" type="TEXT"/>-->
-            <!--<column name="info" type="TEXT"/>-->
-            <!--<column name="standard" type="TEXT"/>-->
+            <column name="company_name" type="TEXT"/>
+            <column name="capitalization" type="bigint"/>
+            <column name="margin" type="bigint"/>
+            <column name="info" type="TEXT"/>
+            <column name="quarter" type="int"/>
+            <column name="standard" type="TEXT"/>
+            <column name="year" type="bigint"/>
         </createTable>
     </changeSet>
 
