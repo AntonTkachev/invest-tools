@@ -2,7 +2,7 @@ import React from 'react';
 
 import axios from 'axios';
 
-export default class PostForm extends React.Component {
+export default class RestClient extends React.Component {
 
     get(id) {
         axios.get('http://localhost:8090/api/mainForms/' + id)

@@ -4,7 +4,7 @@ import {jsonSchema, uiSchema} from './Const'
 import Form from "react-jsonschema-form";
 import SplitPane from 'react-split-pane';
 import {builderSchema} from "./Storage";
-import PostForm from "../PostForm";
+import RestClient from "../RestClient";
 
 class TestElements extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class TestElements extends Component {
             formData: undefined,
             standardForm: <span/>,
         };
-        this.postForm = new PostForm()
+        this.restClient = new RestClient()
     }
 
     flag = false;
@@ -23,7 +23,7 @@ class TestElements extends Component {
     onSubmit(event) {
         //TODO DROP IT
         console.log(event.formData);
-        this.postForm.post(event.formData);
+        this.restClient.post(event.formData);
         let id = this.state.id;
         this.state.id = undefined;
         this.state.formData = undefined;

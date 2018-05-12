@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './styles.css'
 import {_isEmpty} from "./defaultFields/Const";
-import PostForm from "./PostForm";
+import RestClient from "./RestClient";
 
 class AddNewElement extends Component {
     constructor(props) {
@@ -9,13 +9,13 @@ class AddNewElement extends Component {
         this.state = {
             formData: [],
         };
-        this.postForm = new PostForm()
+        this.restClient = new RestClient()
     }
 
     showValues = (e) => {
         const selectBox = e.target;
         let selectedIndex = selectBox.selectedIndex;
-        let data = this.postForm.get(selectedIndex);
+        let data = this.restClient.get(selectedIndex);
         console.log(data);
         let elem = this.state.formData[selectedIndex];
         this.props.setFromData(elem, selectBox.selectedIndex)
