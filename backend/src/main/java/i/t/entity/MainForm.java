@@ -3,8 +3,15 @@ package i.t.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Names values should equals names from jsonSchema for react-jsonschema-form
+ * This schema are storing in Const.js
+ *
+ * @see 'src/defaultFields/Const.js'
+ */
 @Entity
 public class MainForm {
+    //TODO added annotations from lombok
     public MainForm() {
     }
 

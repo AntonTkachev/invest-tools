@@ -4,14 +4,14 @@ import axios from 'axios';
 
 export default class RestClient extends React.Component {
 
-    get(id) {
-        axios.get('http://localhost:8090/api/mainForms/' + id)
-            .then(function (response) {
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+    getMainForms() {
+        return axios.get('http://localhost:8090/api/mainForms')
+            .then(data => data.data._embedded.mainForms);
+    }
+
+    getMainFormByID(id) {
+        return axios.get('http://localhost:8090/api/mainForms/' + id)
+            .then(data => data.data);
     }
 
     post(newForm) {
@@ -22,8 +22,6 @@ export default class RestClient extends React.Component {
             config: {headers: {'Content-Type': 'multipart/form-data'}}
         }).then(function (response) {
             console.log(response);
-        }).catch(function (error) {
-            console.log(error);
-        });
+        })
     }
 }

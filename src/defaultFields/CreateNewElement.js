@@ -22,7 +22,6 @@ class TestElements extends Component {
     // TODO I can't throw event.fromData to App.js
     onSubmit(event) {
         //TODO DROP IT
-        console.log(event.formData);
         this.restClient.post(event.formData);
         let id = this.state.id;
         this.state.id = undefined;
