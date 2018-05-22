@@ -21,13 +21,13 @@ class TestElements extends Component {
 
     // TODO I can't throw event.fromData to App.js
     onSubmit(event) {
-        //TODO DROP IT
-        this.restClient.post(event.formData);
         let id = this.state.id;
         this.state.id = undefined;
         this.state.formData = undefined;
         this.flag = false;
-        this.props.setFromData(event, id);
+        if (id === undefined) this.restClient.post(event.formData);
+        else this.restClient.postByID(event.formData, id);
+        this.props.setFromData(event, id); //TODO удалить setFromData?
     }
 
     _setSchemaInForm(schema) {
@@ -52,6 +52,13 @@ class TestElements extends Component {
     render() {
         if (this.state.formData !== this.props.formData && this.state.id !== this.props.id && this.flag) {
             this.state.id = this.props.id;
+            let FM = this.props.formData;
+            //TODO в толковом словаре Даля под определение слова костыль картинка этого кода(lodash, возвращать с бека undefined)
+            Object.keys(this.props.formData).forEach(key => {
+                    if (FM[key] === null) FM[key] = undefined
+                }
+            );
+            this.state.formData = FM;
             this.state.formData = this.props.formData;
         } else this.flag = true;
         return (

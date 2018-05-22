@@ -9,6 +9,7 @@
 # production
 /build
 .idea
+.gradle
 
 # misc
 .DS_Store

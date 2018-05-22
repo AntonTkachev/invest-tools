@@ -41,5 +41,8 @@ dependencies {
     compile 'com.h2database:h2:1.4.196'
 //    compile 'org.springframework.boot.autoconfigure.liquibase'
     compile 'org.projectlombok:lombok:1.16.20'
+    // https://mvnrepository.com/artifact/commons-collections/commons-collections
+    compile 'commons-collections:commons-collections:3.0'
+
     testCompile("junit:junit")
 }

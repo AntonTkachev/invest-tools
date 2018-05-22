@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class MainForm {
+
     //TODO added annotations from lombok
     public MainForm() {
     }
@@ -36,6 +37,13 @@ public class MainForm {
     String standard;
 
     Long year;
+
+    public int compareTo(Object obj) {
+        MainForm tmp = (MainForm) obj;
+        if (this.id < tmp.id) return -1;
+        else if (this.id > tmp.id) return 1;
+        return 0;
+    }
 
     public void setId(Long id) {
         this.id = id;

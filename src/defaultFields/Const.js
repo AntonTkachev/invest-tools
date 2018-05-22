@@ -1,10 +1,11 @@
 export let standards = ["IFRS", "RAS"];
 /**DEFAULT SCHEMAS*/
+export const companyName = "companyName";
 export let jsonSchema = {
     "title": "A registration form",
     "type": "object",
     "required": [
-        "companyName",
+        companyName,
         "margin",
         "capitalization"
     ],

@@ -10,8 +10,6 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: undefined,
-            lastName: undefined,
             id: undefined,
             formData: {},
             settingsForStandards: false,
@@ -25,13 +23,8 @@ class App extends Component {
     }
 
     setFromData(formData, id) {
-        console.log(formData, id);
         this.setState({...this.state, formData, id})
     }
-
-    setValue = (name, lastName, id) => {
-        this.setState({...this.state, name, lastName, id})
-    };
 
     getTrue() {
         this.setState({...this.state, settingsForStandards: true})
@@ -50,7 +43,6 @@ class App extends Component {
                     <div><AddNewElement
                         id={this.state.id}
                         formData={this.state.formData}
-                        setValue={this.setValue}
                         setFromData={this.setFromData.bind(this)}/></div>
                     <div><TestElements
                         id={this.state.id}

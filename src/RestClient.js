@@ -6,7 +6,7 @@ export default class RestClient extends React.Component {
 
     getMainForms() {
         return axios.get('http://localhost:8090/api/mainForms')
-            .then(data => data.data._embedded.mainForms);
+            .then(data => data.data/*._embedded.mainForms*/);
     }
 
     getMainFormByID(id) {
@@ -19,6 +19,17 @@ export default class RestClient extends React.Component {
             method: 'post',
             url: 'http://localhost:8090/api/mainForms',
             data: newForm,
+            config: {headers: {'Content-Type': 'multipart/form-data'}}
+        }).then(function (response) {
+            console.log(response);
+        })
+    }
+
+    postByID(updateForm, id) {
+        axios({
+            method: 'put',
+            url: 'http://localhost:8090/api/mainForms/' + id,
+            data: updateForm,
             config: {headers: {'Content-Type': 'multipart/form-data'}}
         }).then(function (response) {
             console.log(response);
